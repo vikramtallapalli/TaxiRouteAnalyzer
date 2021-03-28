@@ -1,0 +1,26 @@
+val spark = SparkSession.builder().master("local[1]")
+          .appName("SparkByExamples.com")
+          .getOrCreate()
+df = spark.read.csv("C:\Users\vikra\Desktop\zip\sorted_data.csv")
+df.printSchema()
+
+
+PYTHONPATH => %SPARK_HOME%/python;$SPARK_HOME/python/lib/py4j-0.10.7-src.zip;%PYTHONPATH%
+
+
+val user = spark.read.format("csv").load("C:/Users/vikra/Desktop/zip/sorted_data.csv")
+user.createOrReplaceTempView("tbl")
+spark.sql("""select * from tbl""").show
+
+while read -r line ; do echo "$line"; sleep 1; done < C:/Users/vikra/Desktop/zip/sorted_data.csv | nc64.exe -l -p 8787
+
+
+@echo off
+SET /A "index = 1"
+SET /A "count = 5"
+:while
+if %index% leq %count% (
+   echo The value of index is %index%
+   SET /A "index = index + 1"
+   goto :while
+)
